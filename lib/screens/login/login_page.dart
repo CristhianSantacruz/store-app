@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app_example/screens/home/home_page.dart';
+import 'package:shop_app_example/screens/dashboard_page.dart';
 import 'package:shop_app_example/screens/register/register_page.dart';
+import 'package:shop_app_example/utils/colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final mediaSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorMarineBlue,
       body: SafeArea(
         child: Stack(
           children: [
@@ -121,13 +122,13 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomePage(),
+                          builder: (context) => const DashboardPage(),
                         ),
                       );
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
+                    backgroundColor: colorMarineBlue,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

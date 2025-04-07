@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app_example/screens/dashboard_page.dart';
+import 'package:shop_app_example/screens/fragments/profile_page.dart';
+import 'package:shop_app_example/screens/login/login_page.dart';
+import 'package:shop_app_example/screens/register/register_page.dart';
 import 'package:shop_app_example/screens/splash_screen.dart';
 import 'package:shop_app_example/utils/colors.dart';
+import 'package:shop_app_example/utils/routes_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,25 +18,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        
+      theme: ThemeData(      
         textTheme: const TextTheme(
           bodySmall: TextStyle(
             fontSize: 13,
-            color: colorBlack,
+            color: Colors.black,
           ),
           bodyMedium: TextStyle(
             fontSize: 14,
-            color: colorBlack,
+            color: Colors.black,
           ),
           bodyLarge: TextStyle(
             fontSize: 18,
-            color: colorBlack,
+            color: Colors.black,
           ),  
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: colorMarineBlue),
       ),
-      home: const SplashScreen(),
+      initialRoute: RoutesApp.login_page,
+      routes: {
+        RoutesApp.login_page: (context) => const LoginPage(),
+        RoutesApp.register_page: (context) => const RegisterPage( ),
+        RoutesApp.dashboard_page: (context) => const DashboardPage(),
+        RoutesApp.profile_page: (context) => const ProfilePage(),
+      },
     );
   }
 }
